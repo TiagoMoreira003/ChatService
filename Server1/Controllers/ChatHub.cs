@@ -4,9 +4,9 @@ namespace Server1.Controllers
 {
 	public class ChatHub : Hub
 	{
-		public async Task SendMessage(Guid user, string message)
+		public async Task SendMessage(Guid user, string message, DateTime date)
 		{
-			await Clients.All.SendAsync("ReceiveMessage", user, message);
+			await Clients.All.SendAsync("ReceiveMessage", user, message, date);
 		}
 	}
 }
