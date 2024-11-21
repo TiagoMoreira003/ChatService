@@ -12,7 +12,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<ApplicationDBContext>(options =>
-	options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+{
+	options.UseSqlServer("Server=localhost;Database=ChatService;Trusted_Connection=True;TrustServerCertificate=True;User=root;password=root");
+});
 
 var app = builder.Build();
 
